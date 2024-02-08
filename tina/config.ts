@@ -24,6 +24,12 @@ export default defineConfig({
         name: 'docs',
         label: 'Docs',
         path: 'src/content/docs',
+        ui: {
+          router: ({ document }) => {
+            // navigate to the post that was clicked
+            return `/docs/${document._sys.filename}`
+          },
+        },
         fields: [
           {
             type: 'string',
@@ -128,8 +134,11 @@ export default defineConfig({
             create: true,
             delete: true,
           },
-          router: () => '/',
-        },
+          router: ({ document }) => {
+            // navigate to the post that was clicked
+            return `/post/${document._sys.filename}`
+          },
+        },   
         fields: [
           {
             type: 'image',

@@ -25,6 +25,13 @@ export default defineConfig({
             name: 'docs',
             label: 'Docs',
             path: 'src/content/docs',
+            ui: {
+              allowedActions: {
+                create: true,
+                delete: true,
+              },
+              router: () => '/',
+            },
             fields: [
               {
                 type: 'string',

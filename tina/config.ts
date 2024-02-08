@@ -24,6 +24,7 @@ export default defineConfig({
         name: 'docs',
         label: 'Docs',
         path: 'src/content/docs',
+        format: 'md',
         ui: {
           router: ({ document }) => {
             // navigate to the post that was clicked

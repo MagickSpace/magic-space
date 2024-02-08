@@ -3,16 +3,25 @@ import starlight from '@astrojs/starlight';
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import node from '@astrojs/node';
+import million from "million/compiler";
 
 import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'hybrid',
-  adapter: node({
-    mode: 'standalone',
-  }),
+  website: "https://magick-space.vercel.app",
+  vite: {
+    plugins: [
+      million.vite({
+        mode: "react",
+        server: true,
+        auto: {
+          threshold: 0.05,
+          skip: ["useBadHook", /badVariable/g],
+        },
+      }),
+    ],
+  },
   integrations: [starlight({
     title: 'My Docs',
     social: {

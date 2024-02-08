@@ -4,6 +4,7 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import million from "million/compiler";
+import tina from 'astro-tina'
 
 import partytown from "@astrojs/partytown";
 
@@ -63,5 +64,5 @@ export default defineConfig({
     }]
   }), react(), sitemap(), tailwind({
     applyBaseStyles: false
-  }), partytown()]
+  }), partytown(), tina()]
 });

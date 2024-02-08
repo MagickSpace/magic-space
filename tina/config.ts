@@ -1,5 +1,6 @@
 import { CATEGORIES } from '../src/data/categories.js'
 import { defineConfig } from 'tinacms'
+import { TinaMarkdown } from 'tinacms/dist/rich-text'
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main'
@@ -204,21 +205,6 @@ export default defineConfig({
             label: 'Body',
             name: 'SButton',
             isBody: true,
-            templates: [
-              // Custom Components
-              {
-                label: 'SButton',
-                name: 'SButton',
-                fields: [
-                  {
-                    type: 'rich-text',
-                    label: 'SButton',
-                    name: 'children',
-                    isBody: true,
-                  },
-                ],
-              },
-            ],
           },
         ],
       },

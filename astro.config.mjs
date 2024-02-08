@@ -24,9 +24,28 @@ export default defineConfig({
   },
   integrations: [starlight({
     title: 'My Docs',
+    defaultLocale: 'root',
+      locales: {
+        root: {
+          label: 'English',
+          lang: 'en', // lang is required for root locales
+        },
+        ru: {
+          label: 'Русский',
+        },
+        uk: {
+          label: 'Українська',
+        },
+        es: {
+          label: 'Español',
+        },
+      },
     social: {
       github: 'https://github.com/MagickSpace/magick-space'
     },
+  components: {
+    Head: './src/components/Head.astro',
+  },
     sidebar: [{
       label: 'Guides',
       items: [
@@ -35,7 +54,8 @@ export default defineConfig({
         label: 'Example Guide',
         link: '/guides/example/'
       }]
-    }, {
+    }, 
+    {
       label: 'Reference',
       autogenerate: {
         directory: 'reference'

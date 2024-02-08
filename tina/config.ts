@@ -1,4 +1,4 @@
-import { CATEGORIES } from '../src/data/categories.ts'
+import { CATEGORIES } from '../src/data/categories.js'
 import { defineConfig } from 'tinacms'
 
 // Your hosting provider likely exposes this as an environment variable
@@ -38,9 +38,9 @@ export default defineConfig({
             label: 'Description',
           },
           {
-            type: "string",
-            name: "lang",
-            label: "Language",
+            type: 'string',
+            name: 'lang',
+            label: 'Language',
             required: true,
           },
           {
@@ -70,9 +70,9 @@ export default defineConfig({
             required: true,
           },
           {
-            type: "string",
-            name: "lang",
-            label: "Language",
+            type: 'string',
+            name: 'lang',
+            label: 'Language',
             required: true,
           },
           {
@@ -122,7 +122,7 @@ export default defineConfig({
         name: 'post',
         label: 'Blog Post',
         path: 'src/content/blog',
-        format: 'mdx',
+        format: 'md',
         ui: {
           allowedActions: {
             create: true,
@@ -139,9 +139,9 @@ export default defineConfig({
             description: 'The image used for the cover of the post',
           },
           {
-            type: "string",
-            name: "lang",
-            label: "Language",
+            type: 'string',
+            name: 'lang',
+            label: 'Language',
             required: true,
           },
           {

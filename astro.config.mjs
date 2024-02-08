@@ -1,15 +1,22 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import react from "@astrojs/react";
-
 import sitemap from "@astrojs/sitemap";
+import tailwind from "@astrojs/tailwind";
+import node from '@astrojs/node';
+
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'hybrid',
+  adapter: node({
+    mode: 'standalone',
+  }),
   integrations: [starlight({
     title: 'My Docs',
     social: {
-      github: 'https://github.com/withastro/starlight'
+      github: 'https://github.com/MagickSpace/magick-space'
     },
     sidebar: [{
       label: 'Guides',
@@ -25,5 +32,7 @@ export default defineConfig({
         directory: 'reference'
       }
     }]
-  }), react(), sitemap()]
+  }), react(), sitemap(), tailwind({
+    applyBaseStyles: false
+  }), partytown()]
 });

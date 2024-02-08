@@ -1,0 +1,64 @@
+{
+  "name": "magick-space",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/MagickSpace/magic-space",
+  "author": "Hrihorii Ilin <devopsick@pm.me>",
+  "license": "MIT",
+  "scripts": {
+    "format:check": "prettier --plugin-search-dir=. --check .",
+    "format": "prettier --plugin-search-dir=. --write .",
+    "lint": "eslint .",
+    "syncyarn": "bun bun.lockb",
+    "dev": "bunx --bun astro dev --open",
+    "start": "astro check && astro dev --verbose",
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview",
+    "astro": "astro",
+    "test": "bun test --watch",
+    "new-post": "node scripts/new-post.js",
+    "biome": "bun run biomelint && bun run biomeformat",
+    "biomeformat": "biome format --write ./src",
+    "biomelint": "biome check --apply ./src"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.0",
+    "@astrojs/react": "^3.0.10",
+    "@astrojs/sitemap": "^3.0.5",
+    "@astrojs/starlight": "^0.17.3",
+    "@astrojs/ts-plugin": "^1.5.0",
+    "@fontsource/inter": "5.0.16",
+    "@fontsource/montserrat": "5.0.16",
+    "@fontsource/titan-one": "5.0.18",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "astro": "^4.3.4",
+    "pagefind": "^1.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "reading-time": "^1.5.0",
+    "sharp": "^0.32.5",
+    "typescript": "^5.3.3",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.5.3",
+    "@rollup/plugin-yaml": "^4.1.2",
+    "@types/bun": "^1.0.5",
+    "@typescript-eslint/parser": "6.21.0",
+    "bun-types": "latest",
+    "eslint": "^8.53.0",
+    "eslint-plugin-astro": "0.31.4",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "prettier": "^3.2.5",
+    "prettier-config-standard": "^7.0.0",
+    "prettier-plugin-astro": "0.13.0",
+    "prettier-plugin-tailwindcss": "^0.5.11"
+  },
+  "lint-staged": {
+    "*.{astro,js,jsx,ts,tsx,md,mdx,json}": [
+      "prettier --write --plugin-search-dir=."
+    ]
+  }
+}
